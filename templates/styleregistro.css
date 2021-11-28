@@ -1,0 +1,120 @@
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+
+}
+.titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    margin-left: 150px;
+    padding-left: 50px 10px;
+    position: relative;
+    align-items: center; 
+    
+}
+
+.rego{
+    background-color: rgba(60, 141, 78, 0.863);
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom-color: rgba(93, 202, 126, 0.863);
+    font-style: italic;
+
+}
+body
+{
+    background-clip: border-box;
+    background-color: rgb(231, 227, 179); 
+    margin:auto;
+    margin-top: 100px;
+    background-image: url(../templates/imagenes/HOJITAS.png);
+    background-size: 600px;
+    
+    justify-content: center;
+    
+}
+.container_todo{
+    width: 100%;
+    max-width: 800px;
+    margin:auto;
+    position: relative;
+}
+.caja_atras{
+    width: 100%;
+    padding:10px 20px;
+    display: flex;
+    justify-content: center; 
+    background-color: rgb(87, 181, 90);
+    
+}
+.caja_atras div{
+    margin: 25px;
+    color: rgb(2, 2, 2);
+    transition: all 500ms;
+}
+.caja_atras div p,
+.caja_atras div button{
+    margin-top: 20px;
+}
+.caja_atras button{
+    padding: 10px 40px;
+    background-color:rgb(120, 139, 156);
+    font-family: italic;
+    border: 2px solid rgb(248, 248, 248);
+    cursor: pointer;
+    color: rgb(2, 2, 2);
+    transform: all 300ms;
+    border-radius: 20px;
+}
+.caja_atras button:hover{
+    background-color: rgb(231, 231, 231);
+    color: rgb(0, 0, 0);
+}
+.contenedor_login-registro form{  /* aca se edita el formulario de registro*/
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    position: absolute;  /* este hace que solo quede uno de los formularios*/
+    padding: 20px 40px;   /*este posiciona al formulario*/
+    border-radius: 30px;  /*este le da forma con bordes circulares*/
+    text-align: center;
+}
+.contenedor_login-registro form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: cadetblue;
+}
+.contenedor_login-registro form input{
+    width: 100%;
+    margin-top: 10px;
+    padding: 3px;
+}
+.contenedor_login-registro{
+    width: 100%;
+    position: relative;  
+    display:inline-flex; 
+    align-items: center;   /* este hace ponerlo al centro*/
+    max-width: 400px;  
+    min-width: 150px;/* este hace que el cuadrado blanco se haga mas grande o más pequeño*/
+    top:-110px;     /* Esto hace que la parte de registrarse blanca vaya arriba y tape el de niciar sesion*/
+}
+.contenedor_login-registro form button{
+    padding: 10px 20px;
+    background-color: rgb(151, 199, 102);
+}
+.formulario_login{
+    opacity: 1;
+    display: block;
+}
+.formulario_registro{
+    display: none;
+}
+
+
+
+
