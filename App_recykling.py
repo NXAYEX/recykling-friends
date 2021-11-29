@@ -8,7 +8,15 @@ def ruta1():
 @app.route('/basureroverde')
 def basureroverde():
     return 'El contenedor verde, también conocido como iglú verde, es el destinado para depositar vidrio. En esta categoría deben reciclarse las botellas de vidrio, tarros, trozos de espejos y cristales rotos, entre otros.'
+#BOTONES A RUTAS
+@app.route('/registro')
+def registrar():
+    return render_template('registrarse.html')
+@app.route('/iniciarsesion')
+def iniciarsesion():
+    return render_template('iniciarsesion.html')
 
+#basureros
 @app.route('/basureroazul')
 def basureroazul():
     return 'El contenedor azul es el correspondiente para depositar papel y cartón. Este tipo de contenedores está diseñado para almacenar cualquier tipo de cartón procedente de cajas, envases de cartón y cualquier tipo de papel como periódicos, revistas, documentos, folletos, papeles de envolver, pancartas de publicación, entre otros. Es importante plegar las cajas de cartón antes de depositarlas en el contenedor azul para que ocupen el menor espacio posible y den cabida a más material para reciclar.'
@@ -19,9 +27,8 @@ def basurerorojo():
 def basureroamarillo():
     return 'El contenedor amarillo es el adecuado para reciclar plásticos, latas y envases. En este tipo de contenedores se debe almacenar todo material que esté hecho a base de plástico. Como botellas de plástico, envases de alimentos, bolsas de plástico, briks de leche, etc. También las latas de conserva y de refrescos deben depositarse en el contenedor amarillo.'
 
-@app.route('/registro')
-def registrar():
-    return render_template('registro.html')
+
+
 
 if __name__ == '__main__':
     app.run(port = 2003, debug=True) 

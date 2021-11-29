@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+}
+body
+{
+    background-clip: border-box;
+    background-color: rgb(231, 227, 179); 
+    margin:auto;
+    margin-top: 100px;
+    background-image: url(../templates/imagenes/HOJITAS.png);
+    background-size: 600px;
+    
+    justify-content: center;
+    
+}
+.iniciarsesion{
+    background-color: rgb(82, 142, 202);
+    width: 100%;
+    max-width: 800px;
+    margin:auto;
+    position: relative;
+    transition: all 500ms;
+}
+.botonregistro{  
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color:rgb(120, 139, 156);
+    font-family: italic;
+    border: 2px solid rgb(248, 248, 248);
+    cursor: pointer;
+    color: rgb(2, 2, 2);
+    transform: all 300ms;
+    border-radius: 20px;
+}
+.botonregistro:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); 
+    border-color: black;
+}
+.iniciarsesion form{  
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    position: absolute; 
+    padding: 20px 40px;  
+    border-radius: 30px; 
+    text-align: center;
+}
+.iniciarsesion form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: cadetblue;
+}
+.iniciarsesion form input{
+    width: 100%;
+    margin-top: 10px;
+    padding: 3px;
+    background-color: rgb(240, 238, 144);
+    border-radius: 10px;
+    border-color: rgb(204, 230, 58);
+}
+.botoniniciarsesion {
+    margin-top: 20px; 
+    padding: 7px 5px;
+    background-color:rgb(87, 181, 90);
+    font-family: italic;
+    border: 2px solid rgb(248, 248, 248);
+    cursor: pointer;
+    color: rgb(2, 2, 2);
+    transform: all 300ms;
+    border-radius: 10px;
+}
+.botoniniciarsesion:hover{
+    background-color: white;
+    border-color: rgb(87, 181, 90);
+}
+.iniciarsesion h4{
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+

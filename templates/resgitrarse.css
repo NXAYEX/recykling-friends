@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+}
+body
+{
+    background-clip: border-box;
+    background-color: rgb(231, 227, 179); 
+    margin:auto;
+    margin-top: 100px;
+    background-image: url(../templates/imagenes/HOJITAS.png);
+    background-size: 600px;
+    
+    justify-content: center;
+}
+.contenedor{
+    background-color: white;
+    width: 100%;
+    position: absolute; 
+    padding: 30px 50px;  
+    border-radius: 30px; 
+    text-align: center;
+}
+ .contenedor h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+    color: cadetblue;
+}
+.contenedor input{
+    width: 100%;
+    margin-top: 10px;
+    padding: 3px;
+    background-color: rgb(240, 238, 144);
+    border-radius: 10px;
+    border-color: rgb(204, 230, 58);
+}
+.contenedor h4{
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.llevar_a_iniciarsesion{
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color:rgb(120, 139, 156);
+    font-family: italic;
+    border: 2px solid rgb(248, 248, 248);
+    cursor: pointer;
+    color: rgb(2, 2, 2);
+    transform: all 300ms;
+    border-radius: 20px;
+}
+.llevar_a_iniciarsesion:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); 
+    border-color: black;
+}
+.registronuevousu{
+    margin-top: 20px;
+    margin-top: 20px; 
+    padding: 7px 5px;
+    background-color:rgb(87, 181, 90);
+    font-family: italic;
+    border: 2px solid rgb(248, 248, 248);
+    cursor: pointer;
+    color: rgb(2, 2, 2);
+    transform: all 300ms;
+    border-radius: 10px;
+}
+.registronuevousu:hover{
+    background-color: white;
+    border-color: rgb(87, 181, 90);
+}
+
