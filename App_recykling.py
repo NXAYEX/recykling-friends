@@ -2,30 +2,43 @@ from flask import Flask , render_template
 app= Flask(__name__)
 #rutas
 @app.route("/")
-def ruta1():
+def iniciarsesion():
+    return render_template('iniciarsesion.html')
+    
+@app.route('/inicio')
+def inicio():
     return render_template('principal.html')
 
-@app.route('/basureroverde')
-def basureroverde():
-    return 'El contenedor verde, también conocido como iglú verde, es el destinado para depositar vidrio. En esta categoría deben reciclarse las botellas de vidrio, tarros, trozos de espejos y cristales rotos, entre otros.'
-#BOTONES A RUTAS
 @app.route('/registro')
 def registrar():
     return render_template('registrarse.html')
-@app.route('/iniciarsesion')
-def iniciarsesion():
-    return render_template('iniciarsesion.html')
+@app.route('/ranking')
+def ranking():
+    return render_template('ranking.html')
+@app.route('/perfil')
+def perfil():
+    return render_template('perfil.html')
+@app.route('/puntaje')
+def puntaje():
+    return render_template('puntaje.html')
+
 
 #basureros
+@app.route('/basureroverde')
+def basureroverde():
+    return render_template('verde.html')
+
 @app.route('/basureroazul')
 def basureroazul():
-    return 'El contenedor azul es el correspondiente para depositar papel y cartón. Este tipo de contenedores está diseñado para almacenar cualquier tipo de cartón procedente de cajas, envases de cartón y cualquier tipo de papel como periódicos, revistas, documentos, folletos, papeles de envolver, pancartas de publicación, entre otros. Es importante plegar las cajas de cartón antes de depositarlas en el contenedor azul para que ocupen el menor espacio posible y den cabida a más material para reciclar.'
+    return render_template('azul.html')
+
 @app.route('/basurerorojo')
 def basurerorojo():
-    return 'El contenedor rojo es más especial, no se suele encontrar en los núcleos urbanos con frecuencia, y es el destinado a contener residuos tóxicos y peligrosos, como desechos hospitalarios o baterías. Cuando se habla del contenedor de color rojo, principalmente se están hablando de desechos peligrosos. Entre los desechos que se incluyen en esta categoría se encuentran: desechos hospitalarios, baterías, pilas, insecticidas, aerosoles, aceites o productos tecnológicos.'
+    return render_template('rojo.html')
+
 @app.route('/basureroamarillo')
 def basureroamarillo():
-    return 'El contenedor amarillo es el adecuado para reciclar plásticos, latas y envases. En este tipo de contenedores se debe almacenar todo material que esté hecho a base de plástico. Como botellas de plástico, envases de alimentos, bolsas de plástico, briks de leche, etc. También las latas de conserva y de refrescos deben depositarse en el contenedor amarillo.'
+    return render_template('amarillo.html')
 
 
 
