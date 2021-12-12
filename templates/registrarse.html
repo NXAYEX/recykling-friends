@@ -14,15 +14,17 @@
     <br>
     <body>
         <div class="contenedor">
-            <form class="formulario_registro">
+            <form class="formulario_registro" action="/" method="POST">
                 <h2>Registrarse</h2>
-                <input type="text" name="nombre" placeholder="Nombre completo">
-                <input type="text" name="Gmail" placeholder="Correo electronico">
-                <input type="text" name="Usuario" placeholder="Usuario">
-                <input type="password" placeholder="Contraseña" >
-            </form><button class="registronuevousu" href="/inicio">Registrarse</button>
+                <input type="text" name="nombreregister" placeholder="Nombre completo">
+                <input type="text" name="Usuarioregister" placeholder="Usuario">
+                <input type="password" name="contrasenaregister" placeholder="Contraseña" >
+                <button type="submit" class="registronuevousu"><a>Registrarse</a></button>
+                
+            </form>
+            
             <h4>Ya tienes una cuenta?</h4>
-            <button class="llevar_a_iniciarsesion"><a href="/">Iniciar Sesión</a></button>
+            <button class="llevar_a_iniciarsesion"><a href="/iniciosesion">Iniciar Sesión</a></button>
         </div>  
     </body>
 
