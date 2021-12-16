@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html>
     <meta charset="utf-8"/>
-        <link rel="stylesheet" href="azulstyle.css">
+        <link rel="stylesheet">
         <head>
             <title>BASURERO AZUL</title>
 
-        </head>
+        </head><!--código css-->
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0; 
+                text-decoration: none;
+                font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+            }
+            
+            body{
+                background-color:rgb(231, 227, 179);
+            }
+            .REC_cuerpo{
+                width: 1200px;
+                height: 570px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 3%;
+                background-color: white;
+                position: relative;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+            .BAS_azul{
+                color: rgb(120,139,156);
+                margin-top: 3%;
+                position: absolute;
+                font-size: 45px;
+                font-weight: bold;
+                left: 410px;
+            }
+            .PIC_azul{
+                position: absolute;
+                left: 110px;
+                top: 140px;
+            }
+            .UTILIDAD{
+                position: absolute;
+                width: 680px;
+                height: 200px;
+                top: 160px;
+                left: 440px;
+                font-size: 25px;
+                text-align: justify;
+            }
+            .BOTON{
+                width: 280px;
+                background-color: rgb(120,139,156);
+                height: 100px;
+                z-index: 1;
+                position: absolute;
+                border-radius: 30px;
+                left: 620px;
+                top: 350px;
+                text-align: center;
+                color: white;
+                font-size: 30px;
+            
+            }
+        </style>
         <body>
             <div class="REC_cuerpo">
                 <div class="BAS_azul">
@@ -17,10 +79,9 @@
                 <div class="UTILIDAD">Este contenedor está destinado para el reciclaje de papel y cartón. No obstante, no hay que depositar en este contenedor los tetra briks –como el de leche–,
                     los papeles impregnados con aceite u otra sustancia similar deben ir al contenedor orgánico. 
                     </div>
-                <a href="X" class="BOTON">
+                <button method="POST" type="submit"><a  href="/incrementar"  class="BOTON">
                     HOY RECICLÉ
-
-                </a>
+                </a></button>
             </div>
 
         </body>

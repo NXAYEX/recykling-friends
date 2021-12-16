@@ -5,22 +5,26 @@
     text-decoration: none;
     font-family:'Times New Roman', Times, serif;
 }
+.titulo{
+    padding-left: 500px;
+}
 body
 {
     background-clip: border-box;
     background-color: rgb(231, 227, 179); 
     margin:auto;
-    margin-top: 100px;
+    margin-top: 10px;
     background-image: url(../templates/imagenes/HOJITAS.png);
     background-size: 600px;
-    
+    position: relative;
     justify-content: center;
+     
     
 }
 .iniciarsesion{
     background-color: rgb(82, 142, 202);
     width: 100%;
-    max-width: 800px;
+    max-width: 400px;
     margin:auto;
     position: relative;
     transition: all 500ms;

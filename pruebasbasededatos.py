@@ -47,3 +47,41 @@ def registrar():
     # Cerrar la conexión a la base de datos
     db.close()
     return render_template('registrarse.html',results=results)
+
+
+#####
+#iniiciar sesion
+@application.before_request
+def session_management():
+  session.permanent = True
+@application.route("/iniciosesion")
+def login():
+  session.clear()
+  session["Usuario"] = Usuario
+  session["contrasena"] = contrasena
+  return index()
+
+       '''
+                if result:
+                    session.clear()
+                    sesion['usuario']=result['usuario']
+                    session['id']=result['id']
+                    return inicio()
+                else:
+                    return ("naaa")
+                '''
+'''
+                sql = "SELECT `id`, `usuario` FROM `app_reciclaje` WHERE `usuario`=%s AND 'contrasena'=%s"
+                cursor.execute(sql, (usuario,contrasena))
+                result = cursor.fetchone()
+                if result:
+                    session.clear()
+                    session["usuario"] = True
+                    sesion['id']=result['id']
+                    session["contrasena"] = result['contrasena']
+                    msg='bienvenido'
+                    return inicio()
+                else:
+                    return("no eres un usuario")
+'''
+        

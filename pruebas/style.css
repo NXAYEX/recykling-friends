@@ -1,0 +1,108 @@
+*{
+   margin: 0px;
+   padding: 2px;
+}
+.container{
+    width: 100%;
+    max-width: 3000px;
+    min-width: 300px;
+    margin: 0px;
+    background-color: rgb(203, 230, 128);
+    border-radius: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    display: flex; /* aqui separe el titulo con los botones de inicir sesion,registro etc*/
+    justify-content: space-between;
+    align-items: center;
+}
+.popup{
+    position: relative;
+    justify-content: center;
+    padding-left: 500px;
+}
+.bas1{
+    background-color: rgb(215, 243, 187);
+    border-radius: 30px;
+    justify-content: center;
+    position: relative;
+}
+.bas2{
+    background-color: cornflowerblue;
+    border-radius: 20px;
+    justify-content: center;
+    position:relative;
+}
+.bas3{
+    background-color: crimson;
+    border-radius: 50px;
+    position: relative;
+    justify-content: center;
+}
+.bas4{
+    background-color: rgb(230, 227, 96);
+    border-radius: 10px;
+    position: relative;
+    justify-content: center;
+}
+body
+{
+    
+    padding: 0px;
+    background: rgb(218, 207, 60);
+    color: rgb(0, 0, 0);
+    background-image: url(../templates/imagenes/nubes.jpeg);
+}
+.sección1{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding-block: 50px;
+    max-width: 1000px;
+    min-width: 300px;
+    background-image: url(../templates/imagenes/fondoseccion1.jpg);
+    background-size: cover;
+    position: relative;
+    justify-content: center;
+}
+
+.container h3{
+    color: rgb(10, 105, 7);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    
+}
+.container ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container ul li{
+    list-style: none;
+    margin-left: 2px;
+}
+.container ul li a{
+    text-decoration: none;
+    padding:3px 3px;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+}
+.container ul li a:hover
+{
+    background-color: white;
+    color: rgb(87, 181, 90);
+}
+.mapa{
+     
+    background-color:white;
+    
+}
+.mapatexto{
+    display: flex; /* aqui separe el titulo con los botones de inicir sesion,registro etc*/
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding-right: 20px;
+}
+
+
+
