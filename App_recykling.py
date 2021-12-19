@@ -6,14 +6,11 @@ import pymysql.cursors
 app= Flask(__name__)
 app.secret_key = "1234"
 ##CONEXIÓN A LA BASE DE DATOS
-try:
-	conexion = pymysql.connect(host='localhost',
+conexion = pymysql.connect(host='localhost',
                              user='root',
                              password='',
                              db='reciclaje')
-	print("Conexión a base de datos correcta")
-except (pymysql.err.OperationalError, pymysql.err.InternalError) as e:
-	print("Ocurrió un error al conectar: ", e)
+                           
 #REGISTRO SI ERES NUEVO 
 @app.route('/')
 def registro():
@@ -21,6 +18,10 @@ def registro():
 #INSERTAR EN TABLA MYSQL, SE DA UN ID UNICO
 @app.route('/', methods=['GET','POST'])
 def registrarusu():
+    conexion = pymysql.connect(host='localhost',
+                             user='root',
+                             password='',
+                             db='reciclaje')
     if request.method=='POST':
         nombre= request.form['nombreregister']
         usuario= request.form['Usuarioregister']
@@ -39,10 +40,13 @@ def login():
 @app.before_request
 def session_management():
   session.permanent = True
-#AHORA OARA INICIAR SESION SE DEBE CORROBORAR EN LA BASE DE DATOS, FALTA LO DEL MENAJE FLASH
+#AHORA PARA INICIAR SESION SE DEBE CORROBORAR EN LA BASE DE DATOS, FALTA LO DEL MENAJE FLASH
 @app.route("/iniciarsesion",methods=['GET','POST'])
 def iniciarsesion():
-    msg=''
+    conexion = pymysql.connect(host='localhost',
+                             user='root',
+                             password='',
+                             db='reciclaje')
     if request.method=='POST':
         usuario=request.form['usuario']
         contrasena=request.form['contrasena']
@@ -63,10 +67,8 @@ def iniciarsesion():
                         session['puntos']=result[2]
                         return render_template('principal.html', usuario=session['usuario'], id=session['id'], puntos=session['puntos'])
                     else:
-                        return ("Te debes haber equivocado en tu contraseña o usuario")
-                
-    else:
-        return redirect(url_for('login'))
+                        flash("Te debes haber equivocado en tu contraseña o usuario")
+
 #PAGINA PRINCIPAL, CON EL GOOGLE MAP PERSONALIZADO DE LOS BASUREROS             
 @app.route('/inicio',methods=['GET','POST'])
 def principal():
@@ -74,16 +76,17 @@ def principal():
     id=session['id']
     puntos=session['puntos']
     return render_template('principal.html', nombre=usuario, id=id ,puntos=session['puntos'])
-#puntaje
+
+#INCREMENTAR EL PUNTAJE
 @app.route('/incrementar',methods=['GET','POST'])
 def incremento():
     conexion = pymysql.connect(host='localhost',
                               user='root',
                              password='',
-                             db='reciclaje')      
-    
+                             db='reciclaje') 
     usuario=session['usuario']
     id=session['id']
+    i=0
     with conexion:
         with conexion.cursor() as cursor:
             sql = "SELECT puntos FROM app_reciclaje WHERE id=%s"
@@ -95,47 +98,80 @@ def incremento():
             sql='UPDATE app_reciclaje SET puntos=%s WHERE usuario=%s AND id=%s'
             cursor.execute(sql,(i,usuario,id))
             result = cursor.fetchone()
-            conexion.commit()      
+            conexion.commit()
+            flash("lo lograste")    
             return render_template('principal.html', puntos=session['puntos'])
 
 ###
 ##aqui hare una lista
 @app.route('/ranking')
 def ranking():
-    return render_template('ranking.html')
+    conexion = pymysql.connect(host='localhost',
+                              user='root',
+                             password='',
+                             db='reciclaje') 
+    lista=[]
+    with conexion:
+        with conexion.cursor() as cursor:
+            sql = "SELECT usuario,puntos FROM app_reciclaje ORDER BY puntos DESC"
+            cursor.execute(sql)
+            result = cursor.fetchone() #me devuelve a solo el mayor *llora*
+            conexion.commit()
+            primero=result[0]
+            puntaje=result[1]
+            return render_template('ranking.html',primero=primero, puntaje=puntaje)
+
 #NO ACTUALIZA CORRECTAMENTE LOS PUNTOS
 @app.route('/perfil')
 def perfil():
-    puntos=session['puntos']
+    conexion = pymysql.connect(host='localhost',
+                              user='root',
+                             password='',
+                             db='reciclaje')
     usuario=session['usuario']
     id=session['id']
-    return render_template('perfil.html', usuario=session['usuario'], id=session['id'],puntos=session['puntos'])
-@app.route('/puntaje')
-def puntaje():
-    return render_template('puntaje.html')
-
+    with conexion:
+        with conexion.cursor() as cursor:
+            sql = "SELECT puntos FROM app_reciclaje WHERE id=%s"
+            cursor.execute(sql,(id))
+            result = cursor.fetchone()
+            puntaje=result[0]
+            conexion.commit()
+            return render_template('perfil.html', usuario=session['usuario'], id=session['id'],puntaje=puntaje)
 
 #basureros
 @app.route('/basureroverde')
 def basureroverde():
-    return render_template('verde.html')
+    usuario=session['usuario']
+    id=session['id']
+    puntos=session['puntos']
+    return render_template('verde.html', usuario=usuario, id=id, puntos=puntos)
 
 @app.route('/basureroazul')
 def basureroazul():
-    return render_template('azul.html')
+    usuario=session['usuario']
+    id=session['id']
+    puntos=session['puntos']
+    return render_template('azul.html',usuario=usuario, id=id, puntos=puntos)
 
 @app.route('/basurerorojo')
 def basurerorojo():
-    return render_template('rojo.html')
+    usuario=session['usuario']
+    id=session['id']
+    puntos=session['puntos']
+    return render_template('rojo.html',usuario=usuario, id=id, puntos=puntos)
 
 @app.route('/basureroamarillo')
 def basureroamarillo():
-    return render_template('amarillo.html')
+    usuario=session['usuario']
+    id=session['id']
+    puntos=session['puntos']
+    return render_template('amarillo.html',usuario=usuario, id=id, puntos=puntos)
 #CERRAR SESION
 @app.route("/salir")
 def logout():
     session.clear()
-    return redirect(url_for('iniciarsesion'))
+    return redirect(url_for('login'))
 
 
 

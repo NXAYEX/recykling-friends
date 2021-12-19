@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="stylesheet"  media="all">
+        
         <title>Iniciar sesión</title>
-        <img  width="100"src="/templates/imagenes/LOGO APP.png"> <!--todavia falta poner la imagen-->
+        <img><iframe src="https://drive.google.com/file/d/1oUlxA5LG25GZE-sj1QEWc5_CjlSXti1l/preview" width="100" height="50" allow="autoplay"></iframe> </img>
+        
         <h1 class="titulo"> 
             Recykling Friends
         </h1>
@@ -27,11 +29,10 @@
             background-color: rgb(231, 227, 179); 
             margin:auto;
             margin-top: 10px;
-            background-image: url(../templates/imagenes/HOJITAS.png);
+            background-image: url('HOJITAS.png');
             background-size: 600px;
             position: relative;
             justify-content: center;
-             
             
         }
         .iniciarsesion{
@@ -45,11 +46,11 @@
         .botonregistro{  
             margin-top: 20px;
             padding: 10px 40px;
-            background-color:rgb(120, 139, 156);
+            background-color:rgb(150, 173, 194);
             font-family: italic;
             border: 2px solid rgb(248, 248, 248);
             cursor: pointer;
-            color: rgb(2, 2, 2);
+            color: rgb(0, 0, 0);
             transform: all 300ms;
             border-radius: 20px;
         }
@@ -70,7 +71,7 @@
             font-size: 30px;
             text-align: center;
             margin-bottom: 25px;
-            color: cadetblue;
+            color: rgb(112, 183, 187);
         }
         .iniciarsesion form input{
             width: 100%;
@@ -83,7 +84,7 @@
         .botoniniciarsesion {
             margin-top: 20px; 
             padding: 7px 5px;
-            background-color:rgb(87, 181, 90);
+            background-color:rgb(60, 156, 63);
             font-family: italic;
             border: 2px solid rgb(248, 248, 248);
             cursor: pointer;
@@ -103,18 +104,20 @@
     <br>
     <br>
     <br>
+    <body background="/templates/imagenes/HOJITAS.png"></body>
     <body>
+        
         <div class="iniciarsesion">
             <form class="formulario_login" method='POST'>
                 <h2>Iniciar sesión</h2>
                 <input type="text" name="usuario" placeholder="Usuario">
-                <input type="text" name="contrasena" placeholder="Contraseña" >
+                <input type="text" name="contrasena" id="txtPassword" placeholder="Contraseña" >
                 <button type="submit" class="botoniniciarsesion">Iniciar sesión</button>
                 <h4>No tienes cuenta?</h4>
                 <h4>Únetenos!</h4>
-                <button class="botonregistro"><a href="/">Registrarse</a></button>
+                <button class="botonregistro" color="black"><a href="/">Registrarse</a></button>
             </form>
-        </div>
+        </div>  
         
     </body>
 

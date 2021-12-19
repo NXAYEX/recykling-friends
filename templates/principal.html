@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="style.css" method='GET'>
+        <link rel="stylesheet" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head><!--código css-->
     <style type="text/css">
@@ -21,7 +21,11 @@
              display: flex; /* aqui separe el titulo con los botones de inicir sesion,registro etc*/
              justify-content: space-between;
              align-items: center;
-         }
+             background-image: url('../templates/imagenes/trianglify-lowres.png');
+             background-size: cover;
+
+         
+        }
          .popup{
              position: relative;
              justify-content: center;
@@ -53,17 +57,17 @@
          }
          body
          {
-             
              padding: 0px;
              background: rgb(218, 207, 60);
              color: rgb(0, 0, 0);
-             background-image: url(../templates/imagenes/nubes.jpeg);
+             background-image: url('../templates/imagenes/nubes.jpeg');
+             background-repeat: no-repeat;
          }
          .sección1{
              background-color: rgb(255, 255, 255);
              width: 100%;
              padding-block: 50px;
-             max-width: 1000px;
+             max-width: 700px;
              min-width: 300px;
              background-image: url(../templates/imagenes/fondoseccion1.jpg);
              background-size: cover;
@@ -100,27 +104,36 @@
              color: rgb(87, 181, 90);
          }
          .mapa{
-              
-             background-color:white;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+             /* aqui separe el titulo con los botones de inicir sesion,registro etc*/
+            justify-content: space-between;
+            background-color:white;
              
          }
          .mapatexto{
+             padding-left: 300px;
              display: flex; /* aqui separe el titulo con los botones de inicir sesion,registro etc*/
              justify-content: space-between;
              align-items: center;
              display: flex;
              padding-right: 20px;
          }
+         .mapa h3{
+             padding-top:0px;
+             padding-left: 700px;
+             position: relative;
+             align-content: center;
+         }
          
     </style>
-    <body >
+    
+    <body>
         <header class="header"> 
             <div  class="container">
                 <a><img src="/templates/imagenes/LOGO APP.png"  alt="logo" width="70"><h3>Recykling Friends</h3></a>
                 <nav class="navigation">
-                
                     <ul>
-                        <li><a href="/perfil"> <span>{{session['usuario']}}😀</span> </a></li>
+                        <li><a href="/perfil"> <span> Hola {{session['usuario']}} 😀</span> </a></li>
                         <li><a href="/ranking">Ranking⭐</a></li>
                         <li><a href="/salir">Salir❌</a></li>
                     </ul>
@@ -130,7 +143,7 @@
         </header >
         <div class="overlay">
             <div class="popup">
-                <button class="bas1"><a href="/basureroverde" > <img src="/templates/imagenes/BASURERO VERDE.png" width="50"></a></button>
+                <button class="bas1"><a href="/basureroverde" ><img src="/templates/imagenes/BASURERO VERDE.png" width="50"></a></button>
                 <button class="bas2"><a href="/basureroazul"  ><img src="/templates/imagenes/BASURERO AZUL.png" width="50"></a></button>
                 <button class="bas3"><a href="/basurerorojo"  ><img src="/templates/imagenes/BASURERO ROJO.png" width="50"></a></button>
                 <button class="bas4"><a href="/basureroamarillo"  ><img src="/templates/imagenes/BASURERO AMARILLO.png" width="50"></a></button>
@@ -139,40 +152,44 @@
         </div>
         <div class="mapa">
             <h2>Mapa</h2>
-            <div class="mapatexto"></div>
-                <iframe src="https://www.google.com/maps/d/embed?mid=1K8P6zrk_t9QHLwSYyJaVCjaiZ3gEspRd&ehbc=2E312F" width="640" height="480"></iframe>
-                <h3>Hola! bienvenido a Recykling Friends<br> Este mapa es de los puntos de reciclaje y de basureros que hay en la universidad y sus alrededores, esperamos que sea de ayuda y
-                fomentemos el reciclaje como el de no botar basura en la calle o esperar llegar a casa para botar nuestra basura.</h3>
-                <!--<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1vFC_g2LEoDvnLAwKu3Qpov4fm2wuJ-5W" width="640" height="480"></iframe></div>--> 
-            </div>
+            <div class="mapatexto"><h3>Hola {{session['usuario']}}! bienvenid@ a Recykling Friends <br> Este mapa es de los puntos de reciclaje y de basureros que hay en la universidad y sus alrededores,<br> esperamos que sea de ayuda y
+                 fomentemos el reciclaje como el de no botar basura en la calle<br> o esperar llegar a casa para botar nuestra basura.
+            </h3></div>
+               <iframe src="https://www.google.com/maps/d/embed?mid=1K8P6zrk_t9QHLwSYyJaVCjaiZ3gEspRd&ehbc=2E312F" width="650" height="500"></iframe>
+               
+            </div> 
+            
         <div class="sección_youtube">
-            <h2>Vamos a reciclar juntos!</h2>
-            <iframe width="280" height="157" 
+            <h2>Vamos a reciclar juntos!<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-btn-fill" viewBox="0 0 16 16">
+            <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+          </svg></h2>
+          <br>
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/xCaI-5WVRlY" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>  
-            <iframe width="280" height="157" 
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/IoWmF0fo2Wc" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-            <iframe width="280" height="157" 
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/-UFFFUTMlCw" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-            <iframe width="280" height="157" 
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/9MlKHAhuXlo" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-            <iframe width="280" height="157" 
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/mG3SRMwX_ZU" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen></iframe>
-            <iframe width="280" height="157" 
+            <iframe width="230" height="157" 
             src="https://www.youtube.com/embed/qDbxCUOyLWc" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

@@ -108,13 +108,19 @@
                 top: 280px;
                 left: 20px;
             }
+            .REC_cuerpo h3{
+                padding-top: 200px;
+            }
         </style>
+        <a href="/inicio"><svg color="black" xmlns="http://www.w3.org/2000/svg" width="60" height="34" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+         </svg></a>
         <body>
             <div class="REC_cuerpo">
                 <div class="RANKING_SANSANO"><center>Ranking Sansano</center></div>
                 &nbsp
                 <div class="TIT_lista">
-                    <h1>TOP3 de este mes:</h1>
+                    <h1>El que mas a reciclado hasta ahora es:</h1>
                     <div class="lista_reciclaje">
                 <!--primer puesto-->
                         <div class="circulo_1">
@@ -122,31 +128,32 @@
                         </div>
                         <div class="primero">
                             <!--referencia a nombre de base de datos-->
-                            &nbsp;&nbsp; Nombre Persona
-                            <p>&nbsp;&nbsp;&nbsp; correo persona</p>
-                            <p>&nbsp;&nbsp;&nbsp; puntaje persona</p>
+                             <h1> {{primero}} </h1> 
+                            <!--<p>&nbsp;&nbsp;&nbsp; correo persona</p>-->
+                            <p>{{puntaje}}</p>
                         </div>
-                <!--segundo puesto-->
+                <h3><center>"Reciclar no es solo una acción, es la preservación del mundo y sus recursos."</center></h3>
+                <!--segundo puesto
                         <div class="circulo_2">
                             <img src="https://img.icons8.com/office/80/000000/medal-second-place.png"/>
                         </div>
-                        <div class="segundo">
-                <!--referencia a nombre de base de datos-->
+                        <div class="segundo">-->
+                <!--referencia a nombre de base de datos
                             &nbsp;&nbsp; Nombre Persona
                             <p>&nbsp;&nbsp;&nbsp; correo persona</p>
                             <p>&nbsp;&nbsp;&nbsp; puntaje persona</p>
-                        </div>
+                        </div>-->
 
-                <!--tercer puesto-->
+                <!--tercer puesto
                         <div class="circulo_3">
                             <img src="https://img.icons8.com/office/80/000000/medal2-third-place.png"/>
                         </div>
-                        <div class="tercero">
-                <!--referencia a nombre de base de datos-->
+                        <div class="tercero">-->
+                <!--referencia a nombre de base de datos
                             &nbsp;&nbsp; Nombre Persona
                             <p>&nbsp;&nbsp;&nbsp; correo persona</p>
                             <p>&nbsp;&nbsp;&nbsp; puntaje persona</p>
-                        </div>    
+                        </div>-->    
 
 
                     </div>
